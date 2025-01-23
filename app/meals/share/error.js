@@ -4,7 +4,7 @@ export default function Error() {
     return (
         <main className="error">
             <h1>An error occurred!</h1>
-            <p>Frantically running to the server room...</p>
+            <p>Failed to create meal! Running to server room!</p>
         </main>
     );
 }

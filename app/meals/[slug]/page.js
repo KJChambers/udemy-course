@@ -4,6 +4,20 @@ import Image from 'next/image';
 import { use } from 'react';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({ params }) {
+    const { slug } = use(params);
+    const meal = getMeal(slug);
+
+    if (!meal) {
+        notFound();
+    }
+
+    return {
+        title: meal.title,
+        description: meal.summary,
+    };
+}
+
 export default function MealDetailsPage({ params }) {
     const { slug } = use(params);
     const meal = getMeal(slug);
