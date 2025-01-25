@@ -5,7 +5,7 @@ import { use } from 'react';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }) {
-    const { slug } = use(params);
+    const { slug } = await params;
     const meal = getMeal(slug);
 
     if (!meal) {
